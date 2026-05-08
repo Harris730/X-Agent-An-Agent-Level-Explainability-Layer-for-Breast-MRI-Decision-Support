@@ -16,7 +16,7 @@ AI pipeline built on the MAMA-MIA dataset.
 ---
 
 ## Dataset
-- **[MAMA-MIA](https://www.synapse.org/Synapse:syn60868042/files/)
+- [MAMA-MIA](https://www.synapse.org/Synapse:syn60868042/files/)
 ---
 
 ## Pipeline Modules
