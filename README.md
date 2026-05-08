@@ -16,10 +16,7 @@ AI pipeline built on the MAMA-MIA dataset.
 ---
 
 ## Dataset
-- **MAMA-MIA v2** — 225 patients
-- DUKE (44) | ISPY2 (146) | ISPY1 (29) | NACT (6)
-- Train: 155 | Val: 28 | Test: 42
-
+- **[MAMA-MIA](https://www.synapse.org/Synapse:syn60868042/files/)
 ---
 
 ## Pipeline Modules
