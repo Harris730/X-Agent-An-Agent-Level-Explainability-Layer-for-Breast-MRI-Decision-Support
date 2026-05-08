@@ -1,0 +1,63 @@
+{
+  "patient_id": "ISPY2_597873",
+  "timestamp": "2026-05-02 09:50:39.347692",
+  "modules": {
+    "M1_segmentation": {
+      "timestamp": "2026-05-02 09:50:39.581009",
+      "data": {
+        "voxels": 802,
+        "size_cm": 4.65,
+        "model": "3D U-Net"
+      }
+    },
+    "M2_classification": {
+      "timestamp": "2026-05-02 09:50:39.627407",
+      "data": {
+        "imaging_subtype": "TNBC",
+        "imaging_grade": "Intermediate",
+        "model": "DenseNet121"
+      }
+    },
+    "GAP3_conflict": {
+      "timestamp": "2026-05-02 09:50:39.627580",
+      "data": {
+        "conflicts": 0,
+        "final_sub": "TNBC",
+        "final_grd": "Intermediate",
+        "resolution": "Clinical priority"
+      }
+    },
+    "M4_biobert": {
+      "timestamp": "2026-05-02 09:50:39.646485",
+      "data": {
+        "text": "Patient age 36 pre (<6 months since LMP AND no prior bilateral ovariectomy AND not on estrogen replacement). TNBC cancer. Intermediate grade. ER negative. HER2 negative.",
+        "dim": 768
+      }
+    },
+    "M5_fusion": {
+      "timestamp": "2026-05-02 09:50:39.653191",
+      "data": {
+        "fused_sub": "TNBC",
+        "fused_grd": "Intermediate",
+        "pcr_prob": "30.3%"
+      }
+    },
+    "M6_llm_rag": {
+      "timestamp": "2026-05-02 09:50:39.666077",
+      "data": {
+        "recommendation": "Patient ISPY2_597873: TNBC breast cancer, Intermediate grade, ~4.65 cm (age 36).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+        "citations": [
+          "NCCN Guidelines 2024 \u2014 Neoadjuvant Response",
+          "NCCN Guidelines 2024 \u2014 TNBC Treatment"
+        ]
+      }
+    }
+  },
+  "conflicts": [],
+  "final_report": {
+    "recommendation": "Patient ISPY2_597873: TNBC breast cancer, Intermediate grade, ~4.65 cm (age 36).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+    "citation": "NCCN Guidelines 2024",
+    "total_modules": 6,
+    "total_conflicts": 0
+  }
+}

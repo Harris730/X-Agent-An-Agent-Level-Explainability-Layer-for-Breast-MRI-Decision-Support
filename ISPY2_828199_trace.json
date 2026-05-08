@@ -1,0 +1,63 @@
+{
+  "patient_id": "ISPY2_828199",
+  "timestamp": "2026-05-02 09:50:54.092969",
+  "modules": {
+    "M1_segmentation": {
+      "timestamp": "2026-05-02 09:50:54.371595",
+      "data": {
+        "voxels": 140,
+        "size_cm": 2.6,
+        "model": "3D U-Net"
+      }
+    },
+    "M2_classification": {
+      "timestamp": "2026-05-02 09:50:54.418291",
+      "data": {
+        "imaging_subtype": "Luminal",
+        "imaging_grade": "Intermediate",
+        "model": "DenseNet121"
+      }
+    },
+    "GAP3_conflict": {
+      "timestamp": "2026-05-02 09:50:54.418465",
+      "data": {
+        "conflicts": 0,
+        "final_sub": "Luminal",
+        "final_grd": "Intermediate",
+        "resolution": "Clinical priority"
+      }
+    },
+    "M4_biobert": {
+      "timestamp": "2026-05-02 09:50:54.437252",
+      "data": {
+        "text": "Patient age 43 pre (< 6 months since LMP AND no prior bilateral ovariectomy AND not on estrogen replacement). Luminal cancer. Intermediate grade. ER negative. HER2 negative.",
+        "dim": 768
+      }
+    },
+    "M5_fusion": {
+      "timestamp": "2026-05-02 09:50:54.444073",
+      "data": {
+        "fused_sub": "TNBC",
+        "fused_grd": "Intermediate",
+        "pcr_prob": "26.0%"
+      }
+    },
+    "M6_llm_rag": {
+      "timestamp": "2026-05-02 09:50:54.457073",
+      "data": {
+        "recommendation": "Patient ISPY2_828199: TNBC breast cancer, Intermediate grade, ~2.6 cm (age 43).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+        "citations": [
+          "NCCN Guidelines 2024 \u2014 Neoadjuvant Response",
+          "NCCN Guidelines 2024 \u2014 TNBC Treatment"
+        ]
+      }
+    }
+  },
+  "conflicts": [],
+  "final_report": {
+    "recommendation": "Patient ISPY2_828199: TNBC breast cancer, Intermediate grade, ~2.6 cm (age 43).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+    "citation": "NCCN Guidelines 2024",
+    "total_modules": 6,
+    "total_conflicts": 0
+  }
+}

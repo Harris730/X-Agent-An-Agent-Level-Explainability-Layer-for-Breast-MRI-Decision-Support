@@ -1,0 +1,80 @@
+{
+  "patient_id": "DUKE_642",
+  "timestamp": "2026-05-02 09:50:35.248363",
+  "modules": {
+    "M1_segmentation": {
+      "timestamp": "2026-05-02 09:50:38.105369",
+      "data": {
+        "voxels": 24,
+        "size_cm": 1.44,
+        "model": "3D U-Net"
+      }
+    },
+    "M2_classification": {
+      "timestamp": "2026-05-02 09:50:38.152633",
+      "data": {
+        "imaging_subtype": "Luminal",
+        "imaging_grade": "Intermediate",
+        "model": "DenseNet121"
+      }
+    },
+    "GAP3_conflict": {
+      "timestamp": "2026-05-02 09:50:38.152979",
+      "data": {
+        "conflicts": 2,
+        "final_sub": "HER2-enriched",
+        "final_grd": "High",
+        "resolution": "Clinical priority"
+      }
+    },
+    "M4_biobert": {
+      "timestamp": "2026-05-02 09:50:38.171318",
+      "data": {
+        "text": "Patient age 64 post. HER2-enriched cancer. High grade. ER positive. HER2 positive.",
+        "dim": 768
+      }
+    },
+    "M5_fusion": {
+      "timestamp": "2026-05-02 09:50:38.179169",
+      "data": {
+        "fused_sub": "TNBC",
+        "fused_grd": "Intermediate",
+        "pcr_prob": "30.5%"
+      }
+    },
+    "M6_llm_rag": {
+      "timestamp": "2026-05-02 09:50:38.189833",
+      "data": {
+        "recommendation": "Patient DUKE_642: TNBC breast cancer, Intermediate grade, ~1.44 cm (age 64).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+        "citations": [
+          "NCCN Guidelines 2024 \u2014 Neoadjuvant Response",
+          "NCCN Guidelines 2024 \u2014 TNBC Treatment"
+        ]
+      }
+    }
+  },
+  "conflicts": [
+    {
+      "source1": "MRI",
+      "value1": "Luminal",
+      "source2": "Pathology",
+      "value2": "HER2-enriched",
+      "resolution": "Defer to clinical pathology",
+      "timestamp": "2026-05-02 09:50:38.152861"
+    },
+    {
+      "source1": "MRI",
+      "value1": "Intermediate",
+      "source2": "Pathology",
+      "value2": "High",
+      "resolution": "Defer to clinical pathology",
+      "timestamp": "2026-05-02 09:50:38.152955"
+    }
+  ],
+  "final_report": {
+    "recommendation": "Patient DUKE_642: TNBC breast cancer, Intermediate grade, ~1.44 cm (age 64).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+    "citation": "NCCN Guidelines 2024",
+    "total_modules": 6,
+    "total_conflicts": 2
+  }
+}

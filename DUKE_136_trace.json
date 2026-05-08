@@ -1,0 +1,72 @@
+{
+  "patient_id": "DUKE_136",
+  "timestamp": "2026-05-02 09:50:31.073160",
+  "modules": {
+    "M1_segmentation": {
+      "timestamp": "2026-05-02 09:50:33.910600",
+      "data": {
+        "voxels": 299,
+        "size_cm": 3.34,
+        "model": "3D U-Net"
+      }
+    },
+    "M2_classification": {
+      "timestamp": "2026-05-02 09:50:33.958086",
+      "data": {
+        "imaging_subtype": "TNBC",
+        "imaging_grade": "Intermediate",
+        "model": "DenseNet121"
+      }
+    },
+    "GAP3_conflict": {
+      "timestamp": "2026-05-02 09:50:33.958366",
+      "data": {
+        "conflicts": 1,
+        "final_sub": "Luminal",
+        "final_grd": "Intermediate",
+        "resolution": "Clinical priority"
+      }
+    },
+    "M4_biobert": {
+      "timestamp": "2026-05-02 09:50:33.977938",
+      "data": {
+        "text": "Patient age 42 pre. Luminal cancer. Intermediate grade. ER positive. HER2 negative.",
+        "dim": 768
+      }
+    },
+    "M5_fusion": {
+      "timestamp": "2026-05-02 09:50:33.985196",
+      "data": {
+        "fused_sub": "Luminal",
+        "fused_grd": "Intermediate",
+        "pcr_prob": "27.6%"
+      }
+    },
+    "M6_llm_rag": {
+      "timestamp": "2026-05-02 09:50:33.995959",
+      "data": {
+        "recommendation": "Patient DUKE_136: Luminal breast cancer, Intermediate grade, ~3.34 cm (age 42).\n\u2192 Endocrine therapy + chemotherapy.",
+        "citations": [
+          "NCCN Guidelines 2024 \u2014 Luminal A Treatment",
+          "NCCN Guidelines 2024 \u2014 Luminal B Treatment"
+        ]
+      }
+    }
+  },
+  "conflicts": [
+    {
+      "source1": "MRI",
+      "value1": "TNBC",
+      "source2": "Pathology",
+      "value2": "Luminal",
+      "resolution": "Defer to clinical pathology",
+      "timestamp": "2026-05-02 09:50:33.958337"
+    }
+  ],
+  "final_report": {
+    "recommendation": "Patient DUKE_136: Luminal breast cancer, Intermediate grade, ~3.34 cm (age 42).\n\u2192 Endocrine therapy + chemotherapy.",
+    "citation": "NCCN Guidelines 2024",
+    "total_modules": 6,
+    "total_conflicts": 1
+  }
+}

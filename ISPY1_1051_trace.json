@@ -1,0 +1,63 @@
+{
+  "patient_id": "ISPY1_1051",
+  "timestamp": "2026-05-02 09:50:38.204748",
+  "modules": {
+    "M1_segmentation": {
+      "timestamp": "2026-05-02 09:50:38.414983",
+      "data": {
+        "voxels": 3890,
+        "size_cm": 7.86,
+        "model": "3D U-Net"
+      }
+    },
+    "M2_classification": {
+      "timestamp": "2026-05-02 09:50:38.462517",
+      "data": {
+        "imaging_subtype": "Luminal",
+        "imaging_grade": "Intermediate",
+        "model": "DenseNet121"
+      }
+    },
+    "GAP3_conflict": {
+      "timestamp": "2026-05-02 09:50:38.462732",
+      "data": {
+        "conflicts": 0,
+        "final_sub": "Luminal",
+        "final_grd": "Intermediate",
+        "resolution": "Clinical priority"
+      }
+    },
+    "M4_biobert": {
+      "timestamp": "2026-05-02 09:50:38.481232",
+      "data": {
+        "text": "Patient age 48 unknown. Luminal cancer. Intermediate grade. ER positive. HER2 negative.",
+        "dim": 768
+      }
+    },
+    "M5_fusion": {
+      "timestamp": "2026-05-02 09:50:38.489053",
+      "data": {
+        "fused_sub": "Luminal",
+        "fused_grd": "Intermediate",
+        "pcr_prob": "26.0%"
+      }
+    },
+    "M6_llm_rag": {
+      "timestamp": "2026-05-02 09:50:38.502276",
+      "data": {
+        "recommendation": "Patient ISPY1_1051: Luminal breast cancer, Intermediate grade, ~7.86 cm (age 48).\n\u2192 Endocrine therapy + chemotherapy.",
+        "citations": [
+          "NCCN Guidelines 2024 \u2014 Luminal A Treatment",
+          "NCCN Guidelines 2024 \u2014 Luminal B Treatment"
+        ]
+      }
+    }
+  },
+  "conflicts": [],
+  "final_report": {
+    "recommendation": "Patient ISPY1_1051: Luminal breast cancer, Intermediate grade, ~7.86 cm (age 48).\n\u2192 Endocrine therapy + chemotherapy.",
+    "citation": "NCCN Guidelines 2024",
+    "total_modules": 6,
+    "total_conflicts": 0
+  }
+}

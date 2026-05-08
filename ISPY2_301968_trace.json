@@ -1,0 +1,63 @@
+{
+  "patient_id": "ISPY2_301968",
+  "timestamp": "2026-05-02 09:50:53.262915",
+  "modules": {
+    "M1_segmentation": {
+      "timestamp": "2026-05-02 09:50:54.001038",
+      "data": {
+        "voxels": 1944,
+        "size_cm": 6.24,
+        "model": "3D U-Net"
+      }
+    },
+    "M2_classification": {
+      "timestamp": "2026-05-02 09:50:54.047418",
+      "data": {
+        "imaging_subtype": "Luminal",
+        "imaging_grade": "Intermediate",
+        "model": "DenseNet121"
+      }
+    },
+    "GAP3_conflict": {
+      "timestamp": "2026-05-02 09:50:54.047679",
+      "data": {
+        "conflicts": 0,
+        "final_sub": "Luminal",
+        "final_grd": "Intermediate",
+        "resolution": "Clinical priority"
+      }
+    },
+    "M4_biobert": {
+      "timestamp": "2026-05-02 09:50:54.077664",
+      "data": {
+        "text": "Patient age 45 pre (<6 months since LMP AND no prior bilateral ovariectomy AND not on estrogen replacement). Luminal cancer. Intermediate grade. ER negative. HER2 negative.",
+        "dim": 768
+      }
+    },
+    "M5_fusion": {
+      "timestamp": "2026-05-02 09:50:54.080464",
+      "data": {
+        "fused_sub": "TNBC",
+        "fused_grd": "Intermediate",
+        "pcr_prob": "26.5%"
+      }
+    },
+    "M6_llm_rag": {
+      "timestamp": "2026-05-02 09:50:54.091359",
+      "data": {
+        "recommendation": "Patient ISPY2_301968: TNBC breast cancer, Intermediate grade, ~6.24 cm (age 45).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+        "citations": [
+          "NCCN Guidelines 2024 \u2014 Neoadjuvant Response",
+          "NCCN Guidelines 2024 \u2014 TNBC Treatment"
+        ]
+      }
+    }
+  },
+  "conflicts": [],
+  "final_report": {
+    "recommendation": "Patient ISPY2_301968: TNBC breast cancer, Intermediate grade, ~6.24 cm (age 45).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+    "citation": "NCCN Guidelines 2024",
+    "total_modules": 6,
+    "total_conflicts": 0
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "patient_id": "ISPY2_212307",
+  "timestamp": "2026-05-02 09:50:27.379843",
+  "modules": {
+    "M1_segmentation": {
+      "timestamp": "2026-05-02 09:50:28.572942",
+      "data": {
+        "voxels": 627,
+        "size_cm": 4.28,
+        "model": "3D U-Net"
+      }
+    },
+    "M2_classification": {
+      "timestamp": "2026-05-02 09:50:28.619158",
+      "data": {
+        "imaging_subtype": "TNBC",
+        "imaging_grade": "Intermediate",
+        "model": "DenseNet121"
+      }
+    },
+    "GAP3_conflict": {
+      "timestamp": "2026-05-02 09:50:28.619440",
+      "data": {
+        "conflicts": 1,
+        "final_sub": "Luminal",
+        "final_grd": "Intermediate",
+        "resolution": "Clinical priority"
+      }
+    },
+    "M4_biobert": {
+      "timestamp": "2026-05-02 09:50:28.638838",
+      "data": {
+        "text": "Patient age 34 pre (<6 months since LMP AND no prior bilateral ovariectomy AND not on estrogen replacement). Luminal cancer. Intermediate grade. ER negative. HER2 negative.",
+        "dim": 768
+      }
+    },
+    "M5_fusion": {
+      "timestamp": "2026-05-02 09:50:28.645614",
+      "data": {
+        "fused_sub": "TNBC",
+        "fused_grd": "Intermediate",
+        "pcr_prob": "28.0%"
+      }
+    },
+    "M6_llm_rag": {
+      "timestamp": "2026-05-02 09:50:28.656467",
+      "data": {
+        "recommendation": "Patient ISPY2_212307: TNBC breast cancer, Intermediate grade, ~4.28 cm (age 34).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+        "citations": [
+          "NCCN Guidelines 2024 \u2014 Neoadjuvant Response",
+          "NCCN Guidelines 2024 \u2014 TNBC Treatment"
+        ]
+      }
+    }
+  },
+  "conflicts": [
+    {
+      "source1": "MRI",
+      "value1": "TNBC",
+      "source2": "Pathology",
+      "value2": "Luminal",
+      "resolution": "Defer to clinical pathology",
+      "timestamp": "2026-05-02 09:50:28.619413"
+    }
+  ],
+  "final_report": {
+    "recommendation": "Patient ISPY2_212307: TNBC breast cancer, Intermediate grade, ~4.28 cm (age 34).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+    "citation": "NCCN Guidelines 2024",
+    "total_modules": 6,
+    "total_conflicts": 1
+  }
+}

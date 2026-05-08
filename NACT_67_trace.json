@@ -1,0 +1,72 @@
+{
+  "patient_id": "NACT_67",
+  "timestamp": "2026-05-02 09:51:06.170182",
+  "modules": {
+    "M1_segmentation": {
+      "timestamp": "2026-05-02 09:51:06.362414",
+      "data": {
+        "voxels": 2541,
+        "size_cm": 6.82,
+        "model": "3D U-Net"
+      }
+    },
+    "M2_classification": {
+      "timestamp": "2026-05-02 09:51:06.408777",
+      "data": {
+        "imaging_subtype": "Luminal",
+        "imaging_grade": "Intermediate",
+        "model": "DenseNet121"
+      }
+    },
+    "GAP3_conflict": {
+      "timestamp": "2026-05-02 09:51:06.409035",
+      "data": {
+        "conflicts": 1,
+        "final_sub": "TNBC",
+        "final_grd": "Intermediate",
+        "resolution": "Clinical priority"
+      }
+    },
+    "M4_biobert": {
+      "timestamp": "2026-05-02 09:51:06.427916",
+      "data": {
+        "text": "Patient age 48 unknown. TNBC cancer. Intermediate grade. ER negative. HER2 negative.",
+        "dim": 768
+      }
+    },
+    "M5_fusion": {
+      "timestamp": "2026-05-02 09:51:06.434852",
+      "data": {
+        "fused_sub": "TNBC",
+        "fused_grd": "Intermediate",
+        "pcr_prob": "28.2%"
+      }
+    },
+    "M6_llm_rag": {
+      "timestamp": "2026-05-02 09:51:06.445818",
+      "data": {
+        "recommendation": "Patient NACT_67: TNBC breast cancer, Intermediate grade, ~6.82 cm (age 48).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+        "citations": [
+          "NCCN Guidelines 2024 \u2014 Neoadjuvant Response",
+          "NCCN Guidelines 2024 \u2014 TNBC Treatment"
+        ]
+      }
+    }
+  },
+  "conflicts": [
+    {
+      "source1": "MRI",
+      "value1": "Luminal",
+      "source2": "Pathology",
+      "value2": "TNBC",
+      "resolution": "Defer to clinical pathology",
+      "timestamp": "2026-05-02 09:51:06.409008"
+    }
+  ],
+  "final_report": {
+    "recommendation": "Patient NACT_67: TNBC breast cancer, Intermediate grade, ~6.82 cm (age 48).\n\u2192 Anthracyclines + taxanes. Consider PARP inhibitors if BRCA-mutated.",
+    "citation": "NCCN Guidelines 2024",
+    "total_modules": 6,
+    "total_conflicts": 1
+  }
+}
