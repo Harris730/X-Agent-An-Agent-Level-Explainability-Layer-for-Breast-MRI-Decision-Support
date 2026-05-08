@@ -33,38 +33,6 @@ AI pipeline built on the MAMA-MIA dataset.
 | M6 + GAP 2 | LLM + RAG Citations | Novel |
 | GAP 1 | JSON Decision Trace | Novel |
 
----
-
-## Results
-
-### Segmentation
-| Metric | Ours | Paper |
-|--------|------|-------|
-| Dice (no augmentation) | 0.4728 | 0.8034 |
-| Dice (with augmentation) | 0.4957 | 0.8034 |
-
-### Classification
-| Metric | Ours | Paper |
-|--------|------|-------|
-| Accuracy | 40.48% | 83.31% |
-| AUC | 58.17% | 82.01% |
-| F1 Score | 39.11% | 78.33% |
-
-### Fusion
-| Metric | Value |
-|--------|-------|
-| Subtype AUC | 100%  |
-| pCR AUC | 71.4% |
-
-### X-Agent Novelty Scorecard (42 test patients)
-| Novelty | Result |
-|---------|--------|
-| Trace Completeness | 100% |
-| Citation Coverage | 100% |
-| Conflict Detection | 61.9% (26/42) |
-
----
-
 ## Setup
 
 ### Requirements
